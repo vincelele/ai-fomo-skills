@@ -1,0 +1,8 @@
+interface:
+  display_name: "AI FOMO Sources"
+  short_description: "Import sources, comments, and transcripts"
+  brand_color: "#0F766E"
+  default_prompt: "Use $ai-fomo-sources to connect an AI information source and write traceable raw snapshots."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,9 @@
+interface:
+  display_name: "AI FOMO Init"
+  short_description: "Initialize personal AI alignment"
+  brand_color: "#2563EB"
+  default_prompt: "Use $ai-fomo-init to create a personal AI FOMO workspace and alignment layer."
+
+policy:
+  allow_implicit_invocation: true
+

@@ -1,0 +1,42 @@
+version: 1
+
+defaults:
+  timezone: UTC
+  raw_output_dir: raw/inbox
+  state_dir: raw/state
+
+sources:
+  - source_id: sample-official-changelog
+    name: Sample Official Changelog
+    source_type: changelog
+    # Adapter names are illustrative. Replace with the user's actual runtime adapter.
+    adapter: web_article_list
+    enabled: false
+    schedule: manual
+    entry_url: https://example.com/changelog
+    params:
+      vendor: Example Vendor
+      list_kind: changelog
+
+  - source_id: sample-github-repo
+    name: Sample GitHub Repo
+    source_type: repo_update
+    adapter: github_repo
+    enabled: false
+    schedule: manual
+    entry_url: https://github.com/example/project
+    params:
+      include_releases: true
+      include_readme: true
+
+  - source_id: sample-social-account
+    name: Sample Social Account
+    source_type: social
+    adapter: social_account
+    enabled: false
+    schedule: manual
+    entry_url: https://example.com/account
+    params:
+      handles:
+        - example_ai_account
+      bearer_token_env: SOCIAL_BEARER_TOKEN

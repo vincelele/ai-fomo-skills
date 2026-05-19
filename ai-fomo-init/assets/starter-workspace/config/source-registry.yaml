@@ -1,0 +1,9 @@
+version: 1
+
+defaults:
+  timezone: UTC
+  raw_output_dir: raw/inbox
+  state_dir: raw/state
+
+sources: []
+

@@ -1,0 +1,9 @@
+interface:
+  display_name: "AI FOMO"
+  short_description: "Judge AI content through alignment"
+  brand_color: "#B45309"
+  default_prompt: "Use $ai-fomo to judge whether this AI source is worth reading, filing, or skipping."
+
+policy:
+  allow_implicit_invocation: true
+
