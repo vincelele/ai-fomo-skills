@@ -3,15 +3,41 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status: alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#status)
 
-让 AI 先理解你，再帮你筛选、判断和沉淀 AI 信息。
+让 AI 先理解你，再帮你判断哪些 AI 信息值得看、值得问、值得沉淀。
 
-如果你每天看到很多 AI 新闻、产品更新、论文、播客、X 讨论、GitHub 项目，但不知道哪些真的和你有关，这套 skill 的目标就是让 Agent 回答一个问题：
+这是一套给 **AI 创业者、产品经理、独立开发者** 使用的 Agent Skill。它不是让 Agent 帮你多看一点信息，而是让 Agent 帮你少浪费一点注意力。
+
+## 为什么做这个
+
+AI 信息太多了。
+
+不看，怕错过真正优秀的分享、认知和机会；看了，又经常发现内容很浅、质量不高，浪费时间。人不可能一个个看完，更不可能每天都稳定判断“这条信息到底和我有什么关系”。
+
+所以我做了这套 AI FOMO Skills：让 Agent 先理解你的背景、目标、偏好和反馈，再帮你筛选外部信息。它要回答的不是“这篇内容讲了什么”，而是：
 
 ```text
-这条信息值得我花时间吗？为什么和我有关？应该丢掉、先问我，还是沉淀成长期知识？
+这条信息值得我花时间吗？
+为什么和我有关？
+应该丢掉、先问我，还是沉淀成长期知识？
 ```
 
-这不是一个“AI 新闻总结器”。它更像是给 Agent 装上的个人判断系统：先理解你的背景、目标、偏好和反馈，再处理外部信息。
+## 什么是 AI 超级对齐
+
+这里说的 AI 超级对齐，不是宏大的 AI 安全概念，而是一个很具体的个人工作流：
+
+```text
+让 Agent 按照你的背景、目标、判断标准和长期反馈来处理信息。
+```
+
+普通总结器会问：“这篇文章说了什么？”
+
+AI FOMO Skills 会问：
+
+- 这件事是否影响你的产品、创业方向或技术判断？
+- 这条信息是否来自你信任的来源？
+- 它是新信号，还是重复噪音？
+- 它应该进入长期知识库，还是只适合快速看一眼？
+- 如果信息不够，应该先问你什么问题？
 
 ## Status
 
@@ -21,11 +47,11 @@ Alpha / developer preview.
 
 ## 适合谁
 
-- 你不是程序员，但已经在用 Codex、Claude Code、OpenClaw、Cursor 这类 AI Agent。
-- 你经常被 AI 信息流淹没，不想每条都看。
-- 你希望 AI 不只是总结，而是能判断“这和我有什么关系”。
-- 你想把有价值的信息沉淀成自己的本地知识库、signal 和 digest。
-- 你接受一个基本原则：私人资料、账号数据、评论、转录和个人画像都应该留在本地，不要传到公开 GitHub 仓库。
+- AI 创业者：需要快速判断哪些变化会影响机会、产品和市场。
+- 产品经理：需要跟踪 AI 产品、模型能力、交互范式和用户行为变化。
+- 独立开发者：需要发现值得尝试的新工具、开源项目和产品机会。
+- 高频使用 AI Agent 的人：已经在用 Codex、Claude Code、OpenClaw、Cursor 等支持 skill 或规则文件的工具。
+- 被 AI 信息流淹没的人：不想错过重要信息，也不想把时间浪费在低质量内容上。
 
 ## 不适合谁
 
@@ -38,7 +64,7 @@ Alpha / developer preview.
 
 | 你想做什么 | 使用哪个 skill | 它会做什么 |
 | --- | --- | --- |
-| 让 AI 先认识你 | [`ai-fomo-init`](ai-fomo-init/SKILL.md) | 先请你提供类似简历/项目/目标的背景，再通过问答补齐个人判断标准。 |
+| 让 AI 先认识你 | [`ai-fomo-init`](ai-fomo-init/SKILL.md) | 先请你提供类似简历、个人介绍、项目经历或当前目标的材料，再通过问答补齐个人判断标准。 |
 | 把信息接进来 | [`ai-fomo-sources`](ai-fomo-sources/SKILL.md) | 导入官网、RSS、GitHub、X、小宇宙、评论、转录或你手动贴的内容，先保存成可追溯 raw snapshot。 |
 | 判断和沉淀 | [`ai-fomo`](ai-fomo/SKILL.md) | 把资料分成 `write now`、`ask first`、`skip`，再写入 wiki、signals 或 digests。 |
 
@@ -129,7 +155,7 @@ Use $ai-fomo to review my latest raw inbox.
 | --- | --- | --- | --- |
 | 直接贴内容或导出文件 | 最简单 | 不需要 | 没有 connector 时也能先保存 manual snapshot。 |
 | 公司官网、博客、changelog | 简单 | 不需要 | 适合 OpenAI、Anthropic、Google、Meta 等官方页面。 |
-| RSS / Atom | 简单 | 不需要 | 适合博客、更新日志、 newsletter feed。 |
+| RSS / Atom | 简单 | 不需要 | 适合博客、更新日志、newsletter feed。 |
 | GitHub repo | 简单 | 不需要 | 导入 repo metadata 和 README。 |
 | GitHub Trending | 简单 | 不需要 | 抓取某个时间点的 trending snapshot。 |
 | X 用户时间线 | 中等 | 需要 `X_BEARER_TOKEN` | 使用 X API v2。token 不要提交到 GitHub。 |
@@ -140,9 +166,20 @@ Use $ai-fomo to review my latest raw inbox.
 
 原则：能公开访问的来源先接，账号型来源后接；任何会写入本地文件、消耗 API 费用或涉及账号风险的操作，都应该先 dry-run。
 
-## 小宇宙怎么接
+## 小宇宙能力
 
-小宇宙是高级能力，因为它可能涉及账号登录、订阅列表、评论和音频转录。
+小宇宙是这套 skill 的核心高阶能力之一，因为很多高质量 AI 讨论发生在播客里，而不是文章里。
+
+当前已经支持：
+
+- 自动安装本地小宇宙 bridge。
+- 通过短信验证码登录。
+- 批量导入订阅 inbox 里的 episode。
+- 抓取 episode 评论。
+- 可选抓取评论回复。
+- 对音频做转录。
+- 将 episode、comments、transcript 分开保存成 raw snapshot。
+- 再交给 `ai-fomo` 判断：哪些值得看、哪些值得沉淀、哪些可以跳过。
 
 你可以先这样让 Agent 带你走：
 
@@ -153,13 +190,7 @@ Use $ai-fomo-sources to set up Xiaoyuzhou account import.
 先检查环境和 dry-run，不要直接登录、不要直接写入、不要转录全部音频。
 ```
 
-接入后可以做这些事：
-
-- 批量导入订阅 inbox 里的 episode。
-- 抓某期 episode 的评论。
-- 抓评论回复。
-- 对音频做转录。
-- 把 episode、评论、转录分别保存成 raw snapshot，之后再交给 `ai-fomo` 判断。
+注意：小宇宙账号导入涉及登录态、订阅内容、评论和音频转录。请只处理你有权访问和处理的内容，不要把转录、评论或账号数据公开上传。
 
 更详细的说明在 [`ai-fomo-sources/references/xiaoyuzhou-account.md`](ai-fomo-sources/references/xiaoyuzhou-account.md)。
 
