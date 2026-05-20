@@ -3,17 +3,21 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status: alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#status)
 
-让 AI 先理解你，再帮你判断哪些 AI 信息值得看、值得问、值得沉淀。
+为了对抗 AI FOMO，我专门做了一个 Skill。
+
+它不是 AI 日报，也不是 prompt 合集，而是帮你从 AI 信息流里筛出真正值得看的内容，并沉淀成自己的知识库。
 
 这是一套给 **AI 创业者、产品经理、独立开发者** 使用的 Agent Skill。它不是让 Agent 帮你多看一点信息，而是让 Agent 帮你少浪费一点注意力。
 
-## 为什么做这个
+## 我真正缺的不是信息，而是判断
 
 AI 信息太多了。
 
-不看，怕错过真正优秀的分享、认知和机会；看了，又经常发现内容很浅、质量不高，浪费时间。人不可能一个个看完，更不可能每天都稳定判断“这条信息到底和我有什么关系”。
+不看，怕错过真正优秀的分享、认知和机会；看了，又经常发现内容很浅、质量不高，浪费时间。每天各种 AI 博文、YouTube、小宇宙、公众号、GitHub Trending、产品更新的信息都太多了，人不可能每条都认真看。
 
-所以我做了这套 AI FOMO Skills：让 Agent 先理解你的背景、目标、偏好和反馈，再帮你筛选外部信息。它要回答的不是“这篇内容讲了什么”，而是：
+所以我更需要的是：从这些渠道里筛选出我最关心、最值得看的内容。
+
+AI FOMO Skills 要回答的不是“这篇内容讲了什么”，而是：
 
 ```text
 这条信息值得我花时间吗？
@@ -38,6 +42,17 @@ AI FOMO Skills 会问：
 - 它是新信号，还是重复噪音？
 - 它应该进入长期知识库，还是只适合快速看一眼？
 - 如果信息不够，应该先问你什么问题？
+
+## 它主要做四件事
+
+| 能力 | 它解决什么问题 |
+| --- | --- |
+| 总结 | 快速看懂一条内容到底在讲什么，不用先完整读完。 |
+| 筛选 | 结合你的关注方向，判断它值不值得花时间看。 |
+| 解释 | 告诉你它为什么重要，以及和你当前工作有什么关系。 |
+| 沉淀 | 把有价值内容变成后续 Agent 还能复用的个人知识库。 |
+
+核心不是“看更多”，而是更快判断哪些值得看，哪些可以先跳过。
 
 ## Status
 
@@ -67,6 +82,26 @@ Alpha / developer preview.
 | 让 AI 先认识你 | [`ai-fomo-init`](ai-fomo-init/SKILL.md) | 先请你提供类似简历、个人介绍、项目经历或当前目标的材料，再通过问答补齐个人判断标准。 |
 | 把信息接进来 | [`ai-fomo-sources`](ai-fomo-sources/SKILL.md) | 导入官网、RSS、GitHub、X、小宇宙、评论、转录或你手动贴的内容，先保存成可追溯 raw snapshot。 |
 | 判断和沉淀 | [`ai-fomo`](ai-fomo/SKILL.md) | 把资料分成 `write now`、`ask first`、`skip`，再写入 wiki、signals 或 digests。 |
+
+## 典型流程
+
+### 1. 每天先让它帮你筛一遍
+
+以播客为例：你可能关注了很多 AI 相关栏目，但根本没有时间每期都听。`ai-fomo-sources` 可以先把 episode、标题、简介、评论和转录接进来，`ai-fomo` 再结合你的个人兴趣，判断哪些值得看，哪些可以忽略，哪些只是第二优先级。
+
+这一步最重要的不是“总结”，而是先决定要不要看。
+
+### 2. 遇到感兴趣的，再让它深挖
+
+如果某一期、某篇文章或某个 GitHub repo 确实值得看，Agent 会继续做系统总结，提炼里面哪些判断值得学习，哪些 know-how 可以迁移到你的产品、创业或开发工作里。
+
+它不是简单复述内容，而是提炼：哪些判断值得留下，哪些可以复用。
+
+### 3. 用久了，就变成你的 AI 知识库
+
+长期协作之后，它会持续记录你看过什么、判断过什么、关心什么，以及哪些知识以后还可能复用。
+
+这不是一个收藏夹，而是一个会被 Agent 反复读取和更新的个人 AI 知识库。
 
 ## 不懂代码怎么安装
 
@@ -158,6 +193,7 @@ Use $ai-fomo to review my latest raw inbox.
 | RSS / Atom | 简单 | 不需要 | 适合博客、更新日志、newsletter feed。 |
 | GitHub repo | 简单 | 不需要 | 导入 repo metadata 和 README。 |
 | GitHub Trending | 简单 | 不需要 | 抓取某个时间点的 trending snapshot。 |
+| YouTube / 公众号 / 其他内容 | 简单 | 看来源而定 | 先通过链接、字幕、转录、导出文件或手动粘贴保存 manual snapshot。 |
 | X 用户时间线 | 中等 | 需要 `X_BEARER_TOKEN` | 使用 X API v2。token 不要提交到 GitHub。 |
 | 小宇宙公开 episode | 中等 | 通常不需要 | 导入公开 episode metadata 和 show notes。 |
 | 小宇宙订阅 inbox | 高 | 需要登录和本地 bridge | 可批量导入已订阅节目。 |
