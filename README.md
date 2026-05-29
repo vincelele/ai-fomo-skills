@@ -311,6 +311,8 @@ python ~/.codex/skills/ai-fomo-sources/scripts/xiaoyuzhou_account.py \
 
 ## Contributing
 
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for branch, PR, validation, and public data rules.
+
 欢迎贡献：
 
 - 新的数据源导入器
