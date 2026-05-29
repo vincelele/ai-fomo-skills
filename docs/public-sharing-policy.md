@@ -20,6 +20,7 @@ These are safe by default:
 - skill instructions that describe workflows and decision rules
 - empty starter workspace directories
 - templates for `self-context`, `raw`, `wiki`, `signals`, and `digests`
+- generic podcast learning note templates and rubrics
 - synthetic examples written specifically for the public repo
 - rubrics for judging AI information value
 - promotion rules for `source-summary -> theme/dossier`
@@ -56,6 +57,7 @@ These must not be included in the public repo:
 - real feedback logs
 - real raw snapshots from private ingestion
 - real podcast transcripts unless explicitly licensed for redistribution
+- real podcast learning notes derived from private transcripts unless manually reviewed and legally safe to share
 - real Feishu, Notion, or internal workspace content
 - real source state files containing account IDs, cursors, or collection history
 - private wiki source summaries

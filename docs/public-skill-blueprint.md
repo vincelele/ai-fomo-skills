@@ -39,8 +39,9 @@ Create a reusable Codex skill system that lets an agent:
 3. judge whether a source is worth the user's attention
 4. file high-value sources into durable knowledge
 5. promote repeated patterns into themes or dossiers
-6. extract short-cycle signals and digests only when useful
-7. convert feedback into improved future filtering
+6. create learning notes for high-value long-form sources such as podcasts and interviews when useful
+7. extract short-cycle signals and digests only when useful
+8. convert feedback into improved future filtering
 
 ## Non-Goals
 
@@ -120,6 +121,7 @@ signals/
 
 digests/
   daily/
+  podcasts/
   weekly/
   templates/
 ```
@@ -129,7 +131,7 @@ The structure is intentionally simple. The value comes from consistent judgment,
 ## Default Information Flow
 
 ```text
-source -> raw snapshot -> source-summary -> theme/dossier check -> signal/digest -> feedback
+source -> raw snapshot -> source-summary -> theme/dossier check -> signal/digest/learning note -> feedback
 ```
 
 Rules:
@@ -139,10 +141,12 @@ Rules:
 - `wiki/themes/` keeps durable concepts and judgment patterns.
 - `wiki/dossiers/` keeps important recurring entities.
 - `signals/` keeps short-cycle high-signal observations.
-- `digests/` keeps periodic reading outputs.
+- `digests/` keeps periodic reading outputs and human-readable learning notes.
 - `self-context/` keeps alignment and preference information.
 
 Do not skip `wiki/sources/` and jump straight to second-layer knowledge.
+
+For podcast learning notes, keep the human-readable study artifact in `digests/podcasts/`. If the episode is worth durable retention, also write a separate grounded `wiki/sources/` page.
 
 ## Public Artifact Strategy
 
@@ -172,6 +176,7 @@ Version 0 is successful if a new user can:
 4. receive a judgment, not just a summary
 5. see high-value material filed into `wiki/sources`
 6. see low-value material explicitly skipped
-7. give feedback that updates future filtering
+7. turn a long podcast or video transcript into a learning note with listening recommendations
+8. give feedback that updates future filtering
 
 It does not need to automate every source type in the first version.

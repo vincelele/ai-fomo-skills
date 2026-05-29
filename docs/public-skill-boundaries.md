@@ -150,6 +150,8 @@ Use when the user:
 - asks whether something is worth reading
 - asks to summarize and judge a source
 - asks whether content should go into wiki
+- asks whether a podcast or video is worth listening to
+- asks for a podcast learning note that can replace listening to the full episode
 - asks for signals from a batch of raw material
 - asks for a digest based on retained knowledge
 - gives feedback on filtering or summarization behavior
@@ -169,6 +171,7 @@ Use when the user:
 - optional `wiki/sources` page
 - optional updates to existing `themes` or `dossiers`
 - optional signal or digest when requested
+- optional podcast learning note in `digests/podcasts`
 - optional feedback-log entry or preference update
 
 ### Required Behavior
@@ -181,6 +184,8 @@ Use when the user:
   - weak, generic, or low relevance: skip
 - Always write or update `wiki/sources` before second-layer promotion.
 - Prefer updating existing `themes` or `dossiers` over creating new ones.
+- For podcast learning notes, distinguish the human-readable digest from durable wiki filing.
+- Always include an original listening recommendation when the user asks whether a podcast is worth hearing.
 - Treat user feedback as persistent only when the user indicates it should persist.
 
 ### Must Not Do
@@ -190,6 +195,7 @@ Use when the user:
 - Do not file weak material just because it is AI-related.
 - Do not create narrow one-off theme pages.
 - Do not convert raw transcripts into wiki pages without judgment.
+- Do not treat podcast learning notes as source-of-truth knowledge pages.
 - Do not update long-term preferences from one-off instructions.
 - Do not perform complex source collection; hand that to `ai-fomo-sources`.
 
@@ -204,6 +210,12 @@ For every source, it should answer:
 - why might this matter to this user?
 - should it be filed, skipped, or reviewed first?
 - does it update an existing theme or dossier?
+
+For podcast learning requests, it should also answer:
+
+- can the learning note replace listening to the full episode?
+- which original segments, if any, are worth hearing?
+- which sections can be skipped?
 
 ## Inter-Skill Handoff
 

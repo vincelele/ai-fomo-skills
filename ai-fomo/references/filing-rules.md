@@ -18,7 +18,7 @@ For retained sources, write in this order:
 2. affected `wiki/themes/`
 3. affected `wiki/dossiers/`
 4. `signals/` only when requested or explicitly useful
-5. `digests/` only for periodic reading output
+5. `digests/` only for periodic reading output or user-requested learning notes
 6. `self-context/` only for persistent feedback or confirmed preference changes
 
 Never skip `wiki/sources` and write directly to `themes` or `dossiers`.
@@ -44,6 +44,20 @@ Avoid:
 - copied article bodies
 - transcript dumps
 - unsupported conclusions
+
+## `digests/podcasts`
+
+Use for human-readable podcast learning notes when the user wants to decide whether an episode is worth continuing, understand the full episode without listening end to end, or choose which original segments to hear.
+
+These notes should include:
+
+- quick judgment
+- full learning summary
+- personal learning value
+- original listening recommendation
+- reliability and limitations
+
+Do not treat a podcast learning note as a durable source summary. If the episode is worth retaining as knowledge, write `wiki/sources` separately.
 
 ## `wiki/themes`
 
@@ -86,4 +100,3 @@ Propose a dossier only when at least two are true:
 Write feedback to `self-context/feedback-log.md` when the user comments on summary quality, filtering, relevance, or formatting.
 
 Update persistent preferences only when the user clearly indicates the rule should apply in the future.
-

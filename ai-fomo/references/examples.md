@@ -79,3 +79,34 @@ The topic may be relevant if the user tracks agent evaluation or customer suppor
 - Do not write to `wiki/sources` without confirmation.
 - Ask whether the user wants to track prompt review workflows.
 - If confirmed, file as a cautious source summary and mark evidence limitations clearly.
+
+## Example 5: Podcast Learning Note
+
+### Input
+
+A fictional 65-minute podcast episode features the founder of `ThreadAgent`, a startup building agents for team workspaces. Show notes include timestamps for:
+
+- 00:00 founder background
+- 08:00 why session-based chat agents fail in team work
+- 18:00 how persistent project threads changed user behavior
+- 31:00 memory architecture and permission boundaries
+- 46:00 fundraising and hiring stories
+- 58:00 predictions about model companies
+
+The user asks: "Can you make this a learning note so I do not need to listen to the full episode? Also tell me which parts are worth listening to."
+
+### Expected Judgment
+
+Write a podcast learning note.
+
+### Why
+
+The user is not only asking for a source judgment or wiki filing. They need a human-readable digest that supports three decisions: whether to continue, what the episode teaches, and which original segments are worth hearing.
+
+### Filing
+
+- Write `digests/podcasts/<date>-threadagent-persistent-project-threads.md`.
+- Use `references/podcast-learning-note.md`.
+- Recommend selected listening for 08:00-18:00 and 31:00-46:00.
+- Skip or downrank founder background and fundraising unless the user's alignment layer says startup hiring/fundraising is important.
+- Do not write `wiki/sources` unless the user also asks to retain it as long-term knowledge or the episode contains durable, high-relevance claims.
